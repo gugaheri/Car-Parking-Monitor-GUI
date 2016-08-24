@@ -1,0 +1,29 @@
+SystemCodeNumber, Capacity, DisabledCapacity, ShortDescription, Northing, Easting, State, Fault, Occupancy, OccupancyPercentage, FillRate, ExitRate, QueueTime, LastUpdated
+210, 472, 0, Wilkinson Street Park and Ride, 341968.00, 455364.00, Spaces, , 130, 27, 0, 56, 0, 2016-08-24 18:29:16.0
+211, 119, 0, Moor Bridge Park and Ride, 346635.00, 454598.00, Spaces, , 19, 15, 0, 32, 0, 2016-08-24 18:29:16.0
+212, 476, 0, Hucknall Park and Ride, 349208.00, 454031.00, Spaces, , 116, 24, 0, 84, 0, 2016-08-24 18:29:16.0
+911, 250, 0, Huntingdon Street (Metro)., 340470.00, 457583.00, Spaces, Communication Error, 73, 29, 0, 0, 0, 2016-08-24 18:29:16.0
+Am2-1, 455, 0, Trinity Square, 340304.00, 457222.00, Spaces, , 204, 44, 0, 0, 0, 2016-08-24 18:29:16.0
+Am3-2, 517, 0, Fletcher Gate, 339775.00, 457485.00, Spaces, Communication Error, 219, 42, 0, 44, 0, 2016-08-24 18:29:16.0
+BRDMSH, 1185, 0, Broadmarsh, 339484.00, 457417.00, Spaces, , 230, 19, 0, 176, 0, 2016-08-24 18:29:16.0
+C11001, 412, 0, Arndale, 339408.00, 457173.00, Spaces, , 93, 22, 0, 80, 0, 2016-08-24 18:29:16.0
+C11002, 427, 0, Mount Street, 339867.00, 456885.00, Spaces, , 131, 30, 0, 52, 0, 2016-08-24 18:29:16.0
+C11003, 405, 0, Queensbridge Road, 339089.00, 457354.00, Spaces, , 0, 0, 0, 0, 0, 2013-08-20 14:53:00.0
+C11004, 475, 0, St. James' Street, 339705.00, 456938.00, Spaces, , 77, 16, 0, 16, 0, 2016-08-24 18:29:16.0
+C11005, 289, 0, Stoney Street, 339788.00, 457654.00, Spaces, , 80, 27, 0, 40, 0, 2016-08-24 18:29:16.0
+C11006, 512, 0, Newark: St. Mark's Place, 353769.47, 479776.94, Spaces, , 8, 1, 0, 12, 0, 2016-08-24 18:29:16.0
+C12002, 77, 0, Mount St Lower, 339806.12, 456863.53, Spaces, , 0, 0, 0, 0, 0, 2016-08-24 18:29:16.0
+C18418, 998, 0, QUEENS DR P&R, 376885.00, 478373.00, Faulty, , 0, 0, 0, 0, 0, 2012-10-18 09:16:34.0
+CPM_22, 950, 0, Nottingham Train Station., 339121.00, 457546.00, Spaces, , 478, 50, 0, 20, 0, 2016-08-24 18:29:16.0
+FRSTPR, 980, 0, Forest Park and Ride, 341296.00, 456156.00, Faulty, , 309, 31, 0, 128, 0, 2016-08-24 18:29:16.0
+PHNXPR, 659, 0, Phoenix Park and Ride, 343774.00, 453311.00, Spaces, , 131, 19, 0, 88, 0, 2016-08-24 18:29:16.0
+PRLMNT, 221, 0, Upper Parliament Street, 340048.00, 457047.00, Spaces, , 80, 36, 0, 12, 0, 2016-08-24 18:29:16.0
+QNSPR, 1000, 0, Queens Drive Park and Ride, 337308.00, 456353.00, Full, , 1173, 117, 0, 16, 0, 2016-08-24 18:29:16.0
+RYLCT, 629, 0, Wollaton Street, 340147.00, 456879.00, Spaces, Communication Error, 195, 31, 0, 4, 0, 2016-08-24 18:29:16.0
+SB1-1, 439, 0, Talbot Street, 340232.00, 456865.00, Spaces, Communication Error, 106, 24, 24, 0, 0, 2016-08-24 18:29:16.0
+TLBTST, 444, 0, Talbot Street OLD, 0.00, 0.00, Spaces, , 0, 0, 0, 0, 0, 2013-08-20 15:10:15.0
+TRINSQ, 999, 0, Trinity Square, 0.00, 0.00, Spaces, Communication Error, 0, 0, 0, 0, 0, 2016-08-24 18:29:16.0
+VICNTH, 1101, 0, Victoria Centre NTH, 340434.00, 457327.00, Spaces, , 137, 12, 0, 72, 0, 2016-08-24 18:29:16.0
+VICSTH, 1606, 0, Victoria Centre STH, 340218.00, 457468.00, Spaces, , 146, 9, 0, 156, 0, 2016-08-24 18:29:16.0
+WPS$1230, 1606, 0, Victoria Centre South, 340218.00, 457468.00, Spaces, , 524, 32, 44, 0, 0, 2016-04-07 08:39:11.0
+WPS$1231, 1011, 0, Victoria Centre North, 340508.00, 457468.00, Spaces, , 224, 22, 0, 0, 0, 2016-04-07 08:39:11.0

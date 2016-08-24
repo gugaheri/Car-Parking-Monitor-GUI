@@ -6,20 +6,13 @@ from Tkinter import *
 
 
 # variables for storing data
-root = Tk()
 data_dict = {}
 copy_dict = {}
 last_updated = None
 topFrame = middleFrame = bottomFrame = None
-show1 = show2 = show3 = show4 = show5 = temp_show = None
 temp_show = 1
-occupy_percent1, occupy_percent2, occupy_percent3, occupy_percent4, occupy_percent5 = 0, 0, 0, 0, 0
-change_percent1, change_percent2, change_percent3, change_percent4, change_percent5 = 0, 0, 0, 0, 0
-occupy1, occupy2, occupy3, occupy4, occupy5 = 0, 0, 0, 0, 0
-capacity1, capacity2, capacity3, capacity4, capacity5 = 0, 0, 0, 0, 0
-last_update1, last_update2, last_update3, last_update4, last_update5 = 0, 0, 0, 0, 0
-state1, state2, state3, state4, state5 = 0, 0, 0, 0, 0
-color1, color2, color3, color4, color5 = 0, 0, 0, 0, 0
+show = [None]*5
+occupy_percent, change_percent, occupy, capacity, last_update, state, color = ([0]*5 for element in xrange(7))
 spaces_filled = spaces_total = spaces_available = percentage_filled = spaces = almost_full = full = faulty = i = 0
 
 
@@ -68,8 +61,8 @@ def left_arrow_button_clicked():
         delete_frames()
         display()
     else:
-         temp_show = 1
-         # print '< else executed',   temp_show
+        temp_show = 1
+        # print '< else executed',   temp_show
     # print '< button task over'
 
 
@@ -85,8 +78,8 @@ def right_arrow_button_clicked():
         delete_frames()
         display()
     else:
-         temp_show = 21
-         # print '> else executed',   temp_show
+        temp_show = 21
+        # print '> else executed',   temp_show
     # print '> button task over'
 
 
@@ -129,7 +122,7 @@ def emptiest_button_clicked():
 
     global i, temp_show, data_dict
     empty_list = []
-    # print 'Show Empiest button pressed'
+    # print 'Show Emptiest button pressed'
 
     # for loop for populating occupancy percentage in a temp list called empty_list
     for j in xrange(1, i):
@@ -165,7 +158,7 @@ def emptiest_button_clicked():
     canvas_logic()
     delete_frames()
     display()
-    # print 'Show Empiest button task over'
+    # print 'Show Emptiest button task over'
 
 
 def fullest_button_clicked():
@@ -205,7 +198,7 @@ def fullest_button_clicked():
     data_dict = sorted_dict
     # print 'Sorted Full Dictionary:',  data_dict
 
-    temp_show = 1   #reinitialising variable
+    temp_show = 1   # reinitialising variable
     # print 'Show Full Button Pushed', temp_show
     canvas_logic()
     delete_frames()
@@ -276,108 +269,29 @@ def csv_reader():
 def canvas_logic():
     """ function for preparing data for middleFrame """
 
-    global data_dict
-    global show1, show2, show3, show4, show5, temp_show
-    global occupy_percent1, occupy_percent2, occupy_percent3, occupy_percent4, occupy_percent5
-    global change_percent1, change_percent2, change_percent3, change_percent4, change_percent5
-    global occupy1, occupy2, occupy3, occupy4, occupy5
-    global capacity1, capacity2, capacity3, capacity4, capacity5
-    global last_update1, last_update2, last_update3, last_update4, last_update5
-    global state1, state2, state3, state4, state5
-    global color1, color2, color3, color4, color5
-
+    global data_dict, show, occupy_percent, change_percent, occupy, capacity, last_update, state, color
     # populating variables to be displayed in middleFrame
     # temp_show = 1
     # print 'temp_show', temp_show
-    show1 = data_dict[str(temp_show)][3]
-    occupy_percent1 = data_dict[str(temp_show)][9]
-    occupy1 = data_dict[str(temp_show)][8]
-    capacity1 = data_dict[str(temp_show)][1]
-    last_update1 = data_dict[str(temp_show)][13]
-    change_percent1 = data_dict[str(temp_show)][14]
-    state1 = data_dict[str(temp_show)][6]
-    if state1 == ' Spaces':
-        color1 = 'Green'
-    elif state1 == ' Almost Full':
-        color1 = 'Orange'
-    elif state1 == ' Full':
-        color1 = 'Red'
-    elif state1 == ' Faulty':
-        color1 = 'White'
-    else:
-        color1 = 'Yellow'
 
-    show2 = data_dict[str(temp_show + 1)][3]
-    occupy_percent2 = data_dict[str(temp_show + 1)][9]
-    occupy2 = data_dict[str(temp_show + 1)][8]
-    capacity2 = data_dict[str(temp_show + 1)][1]
-    last_update2 = data_dict[str(temp_show + 1)][13]
-    change_percent2 = data_dict[str(temp_show + 1)][14]
-    state2 = data_dict[str(temp_show + 1)][6]
-    if state2 == ' Spaces':
-        color2 = 'Green'
-    elif state2 == ' Almost Full':
-        color2 = 'Orange'
-    elif state2 == ' Full':
-        color2 = 'Red'
-    elif state2 == ' Faulty':
-        color2 = 'White'
-    else:
-        color2 = 'Yellow'
-
-    show3 = data_dict[str(temp_show + 2)][3]
-    occupy_percent3 = data_dict[str(temp_show + 2)][9]
-    occupy3 = data_dict[str(temp_show + 2)][8]
-    capacity3 = data_dict[str(temp_show + 2)][1]
-    last_update3 = data_dict[str(temp_show + 2)][13]
-    change_percent3 = data_dict[str(temp_show + 2)][14]
-    state3 = data_dict[str(temp_show + 2)][6]
-    if state3 == ' Spaces':
-        color3 = 'Green'
-    elif state3 == ' Almost Full':
-        color3 = 'Orange'
-    elif state3 == ' Full':
-        color3 = 'Red'
-    elif state3 == ' Faulty':
-        color3 = 'White'
-    else:
-        color3 = 'Yellow'
-
-    show4 = data_dict[str(temp_show + 3)][3]
-    occupy_percent4 = data_dict[str(temp_show + 3)][9]
-    occupy4 = data_dict[str(temp_show + 3)][8]
-    capacity4 = data_dict[str(temp_show + 3)][1]
-    last_update4 = data_dict[str(temp_show + 3)][13]
-    change_percent4 = data_dict[str(temp_show + 3)][14]
-    state4 = data_dict[str(temp_show + 3)][6]
-    if state4 == ' Spaces':
-        color4 = 'Green'
-    elif state4 == ' Almost Full':
-        color4 = 'Orange'
-    elif state4 == ' Full':
-        color4 = 'Red'
-    elif state4 == ' Faulty':
-        color4 = 'White'
-    else:
-        color4 = 'Yellow'
-
-    show5 = data_dict[str(temp_show + 4)][3]
-    occupy_percent5 = data_dict[str(temp_show + 4)][9]
-    occupy5 = data_dict[str(temp_show + 4)][8]
-    capacity5 = data_dict[str(temp_show + 4)][1]
-    last_update5 = data_dict[str(temp_show + 4)][13]
-    change_percent5 = data_dict[str(temp_show + 4)][14]
-    state5 = data_dict[str(temp_show + 4)][6]
-    if state5 == ' Spaces':
-        color5 = 'Green'
-    elif state5 == ' Almost Full':
-        color5 = 'Orange'
-    elif state5 == ' Full':
-        color5 = 'Red'
-    elif state5 == ' Faulty':
-        color5 = 'White'
-    else:
-        color5 = 'Yellow'
+    for pos in xrange(5):
+        show[pos] = data_dict[str(temp_show + pos)][3]
+        occupy_percent[pos] = data_dict[str(temp_show + pos)][9]
+        occupy[pos] = data_dict[str(temp_show + pos)][8]
+        capacity[pos] = data_dict[str(temp_show + pos)][1]
+        last_update[pos] = data_dict[str(temp_show + pos)][13]
+        change_percent[pos] = data_dict[str(temp_show + pos)][14]
+        state[pos] = data_dict[str(temp_show + pos)][6]
+        if state[pos] == ' Spaces':
+            color[pos] = 'Green'
+        elif state[pos] == ' Almost Full':
+            color[pos] = 'Orange'
+        elif state[pos] == ' Full':
+            color[pos] = 'Red'
+        elif state[pos] == ' Faulty':
+            color[pos] = 'White'
+        else:
+            color[pos] = 'Yellow'
 
 
 def delete_frames():
@@ -414,50 +328,16 @@ def display():
     # Grid layout & Canvas for middleFrame
     label1_mid = Label(middleFrame, text="Car Parks", font='bold 10', bg='White').grid(row=0, column=1, padx=3, pady=3)
 
-    w1 = Canvas(middleFrame, width=500, height=40, relief=GROOVE, bg='White')
-    w1.grid(row=1, columnspan=3, padx=3, pady=3)
-    w1.create_rectangle(0,  20,  1.50*float(occupy_percent1),  37,  width=1,  fill=color1)
-    w1.create_text(0, 10, text=show1, anchor=W)
-    w1.create_text(0, 30, text=occupy_percent1+'%', anchor=W)
-    w1.create_text(185, 10, text=occupy1+'  of '+capacity1+' places filled', anchor=W)
-    w1.create_text(185, 30, text='Last updated at:'+last_update1[:17], anchor=W)
-    w1.create_text(430, 30, text='Change: '+str(change_percent1)+'%', anchor=W)
-
-    w2 = Canvas(middleFrame, width=500, height=40, relief=GROOVE, bg='White')
-    w2.grid(row=2, columnspan=3, padx=3, pady=3)
-    w2.create_rectangle(0,  20,  1.50*float(occupy_percent2),  37,  width=1,  fill=color2)
-    w2.create_text(0, 10, text=show2, anchor=W)
-    w2.create_text(0, 30, text=occupy_percent2+'%', anchor=W)
-    w2.create_text(185, 10, text=occupy2+'  of '+capacity2+' places filled', anchor=W)
-    w2.create_text(185, 30, text='Last updated at:'+last_update2[:17], anchor=W)
-    w2.create_text(430, 30, text='Change: '+str(change_percent2)+'%', anchor=W)
-
-    w3 = Canvas(middleFrame, width=500, height=40, relief=GROOVE, bg='White')
-    w3.grid(row=3, columnspan=3, padx=3, pady=3)
-    w3.create_rectangle(0,  20,  1.50*float(occupy_percent3),  37,  width=1,  fill=color3)
-    w3.create_text(0, 10, text=show3, anchor=W)
-    w3.create_text(0, 30, text=occupy_percent3+'%', anchor=W)
-    w3.create_text(185, 10, text=occupy3+'  of '+capacity3+' places filled', anchor=W)
-    w3.create_text(185, 30, text='Last updated at:'+last_update3[:17], anchor=W)
-    w3.create_text(430, 30, text='Change: '+str(change_percent3)+'%', anchor=W)
-
-    w4 = Canvas(middleFrame, width=500, height=40, relief=GROOVE, bg='White')
-    w4.grid(row=4, columnspan=3, padx=3, pady=3)
-    w4.create_rectangle(0,  20,  1.50*float(occupy_percent4),  37,  width=1,  fill=color4)
-    w4.create_text(0, 10, text=show4, anchor=W)
-    w4.create_text(0, 30, text=occupy_percent4+'%', anchor=W)
-    w4.create_text(185, 10, text=occupy4+'  of '+capacity4+' places filled', anchor=W)
-    w4.create_text(185, 30, text='Last updated at:'+last_update4[:17], anchor=W)
-    w4.create_text(430, 30, text='Change: '+str(change_percent4)+'%', anchor=W)
-
-    w5 = Canvas(middleFrame, width=500, height=40, relief=GROOVE, bg='White')
-    w5.grid(row=5, columnspan=3, padx=3, pady=3)
-    w5.create_rectangle(0,  20,  1.50*float(occupy_percent5),  37,  width=1,  fill=color5)
-    w5.create_text(0, 10, text=show5, anchor=W)
-    w5.create_text(0, 30, text=occupy_percent5+'%', anchor=W)
-    w5.create_text(185, 10, text=occupy5+'  of '+capacity5+' places filled', anchor=W)
-    w5.create_text(185, 30, text='Last updated at:'+last_update5[:17], anchor=W)
-    w5.create_text(430, 30, text='Change: '+str(change_percent5)+'%', anchor=W)
+    w = [None]*5
+    for pos in xrange(5):
+        w[pos] = Canvas(middleFrame, width=500, height=40, relief=GROOVE, bg='White')
+        w[pos].grid(row=pos+1, columnspan=3, padx=3, pady=3)
+        w[pos].create_rectangle(0,  20,  1.50*float(occupy_percent[pos]),  37,  width=1,  fill=color[pos])
+        w[pos].create_text(0, 10, text=show[pos], anchor=W)
+        w[pos].create_text(0, 30, text=occupy_percent[pos]+'%', anchor=W)
+        w[pos].create_text(185, 10, text=occupy[pos]+'  of '+capacity[pos]+' places filled', anchor=W)
+        w[pos].create_text(185, 30, text='Last updated at:'+last_update[pos][:17], anchor=W)
+        w[pos].create_text(430, 30, text='Change: '+str(change_percent[pos])+'%', anchor=W)
 
 
 def main():
@@ -483,7 +363,9 @@ def main():
     display()
 
 
-main()
-root.title('Nottingham Car Parks Monitor')
-root.resizable(0, 0)    # preventing window to maximize
-root.mainloop() # main event loop
+if __name__ == '__main__':
+    root = Tk()
+    main()
+    root.title('Nottingham Car Parks Monitor')
+    root.resizable(0, 0)    # preventing window to maximize
+    root.mainloop() # main event loop
